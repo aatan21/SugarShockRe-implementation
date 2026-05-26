@@ -654,11 +654,10 @@ class PlatformerScene extends Phaser.Scene {
      * @param {string} color - CSS color string for the title text
      */
     showGameOverText(title, color) {
-        // With scrollFactor(0) the world position maps directly to
-        // canvas position × zoom.  Canvas center = (720, 300) →
-        // world center at (360, 150) for 2× zoom.
-        const centerX = 360;
-        const centerY = 150;
+        // scrollFactor(0) objects use canvas coordinates directly
+        // (same as the HUD text).  Canvas center = (720, 300).
+        const centerX = 720;
+        const centerY = 300;
 
         this.add
             .text(centerX, centerY, title + "\nPress R to Restart", {
